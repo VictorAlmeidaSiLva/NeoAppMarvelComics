@@ -6,7 +6,6 @@ function Home() {
     return (
         <>
             <Header/>
-            <h1>API MARVEL</h1>
             <Comics/>
             <Footer/>
         </>
