@@ -1,12 +1,14 @@
 import Comics from "./comics"
 import Header from "./header"
+import Footer from "./footer"
 
 function Home() {
     return (
         <>
-            <Header></Header>
+            <Header/>
             <h1>API MARVEL</h1>
-            <Comics></Comics>
+            <Comics/>
+            <Footer/>
         </>
     )
 }

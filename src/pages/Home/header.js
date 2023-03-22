@@ -1,13 +1,15 @@
-import { Head, Logo, Hqs, Carrinho } from "./styles/stylesHeader"
+import { Head, Cart } from "./styles/stylesHeader"
+import { Link } from "react-router-dom"
 
 function Header() {
     return (
         <>
             <Head>
                 <nav>
-                    <Logo href="#"></Logo>
-                    <Hqs href="#">HQS</Hqs>
-                    <Carrinho href="#">Carrinho</Carrinho>
+                    <Link to="/" >
+                        <img src={require("./images/marvelLogo.png")} alt="Logo"></img>
+                    </Link>
+                    <Cart href="#">Cart</Cart>
                 </nav>
             </Head>
         </>
