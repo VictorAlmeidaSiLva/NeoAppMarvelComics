@@ -1,4 +1,4 @@
-import { Head, Cart } from "./styles/stylesHeader"
+import { Head, Cart, Logo } from "./styles/stylesHeader"
 import { Link } from "react-router-dom"
 
 function Header() {
@@ -6,10 +6,12 @@ function Header() {
         <>
             <Head>
                 <nav>
-                    <Link to="/" >
+                    <Logo href="/" >
                         <img src={require("./images/marvelLogo.png")} alt="Logo"></img>
-                    </Link>
-                    <Cart href="#">Cart</Cart>
+                    </Logo>
+                    <Cart href="/cart">
+                        <img src={require("./images/Cart.png")}></img>
+                    </Cart>
                 </nav>
             </Head>
         </>

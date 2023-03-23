@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Spinner = styled.div`
     position: relative;
     left: 50%;
-    top: 50%;
+    top: 100px;
     z-index: 1;
     border : 16px solid #f3f3f3;
     border-top: 16px solid red;

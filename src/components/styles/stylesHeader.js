@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Head = styled.div `
-        padding: 1rem;
+        padding: 5px;
         background-color: lightgray;
 
     nav {
@@ -10,14 +10,22 @@ export const Head = styled.div `
         align-items: center;
     }
 
-    nav img {
-        height: 8rem;
-        padding: .8rem;
+    nav #logo {
+        
     }
  `
 export const Cart = styled.a `
-        background: black;
-        color: white;
-        padding: .8rem;
-        font-size: 2rem;
+    img{
+        height: 60px;
+        padding: 10px;
+        width: 70px;
+    }
+
+`
+
+export const Logo = styled.a`
+    img {
+        height: 100px;
+        padding: 10px;
+    }
 `

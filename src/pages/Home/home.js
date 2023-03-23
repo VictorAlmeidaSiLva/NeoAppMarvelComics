@@ -1,13 +1,11 @@
+import Header from "../../components/header"
 import Comics from "./comics"
-import Header from "./header"
-import Footer from "./footer"
+import Footer from "../../components/footer"
 
 function Home() {
     return (
         <>
-            <Header/>
             <Comics/>
-            <Footer/>
         </>
     )
 }

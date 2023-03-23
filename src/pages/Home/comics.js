@@ -17,15 +17,13 @@ function Comics() {
                     ts: 1,
                     apikey: "537b30d15b5f4cc9f88ad94eacc97aee",
                     hash: "0d1b28ff07637c55ee96465753be577f",
-                    limit: 20,
+                    limit: 24,
                     offset: 0
                 },
             });
 
             setComics(response.data.data.results)
-            setInterval(() => {
                 setLoading(false)
-            }, 1000)
         }
         loadComics()
 
@@ -45,14 +43,17 @@ function Comics() {
             <ComicsList>
                 {comics.map((comic) => {
                     let priceComic = comic.prices[0]
+                    let creators = comic.creators.items.map(item=>item.name).join(",")
+
                     return (
                         <div>
                             <Comic>
-                                <Link to="/">
-                                    <img src={comic.thumbnail.path + format} alt={comic.title}></img>
+                                <Link to={`/details/${comic.id}`}>
+                                    <img src={comic.thumbnail.path + size + format} alt={comic.title}></img>
                                 </Link>
                                 <span>{comic.title}</span>
                                 <p>${priceComic.price}</p>
+                                <p>{creators}</p>
                             </Comic>
                         </div>
                     )
