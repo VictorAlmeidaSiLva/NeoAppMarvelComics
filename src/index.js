@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Footer from './components/footer';
 import Header from './components/header';
 import './global.css';
-import Cart from './pages/Cart/cart';
+import CartList from './pages/Cart/cartList';
 import Details from './pages/ComicPage/details'
 import Home from './pages/Home/home';
 
@@ -17,7 +17,7 @@ root.render(
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/details/:id' element={<Details />} />
-      <Route path='/cart' element={<Cart />} />
+      <Route path='/cart' element={<CartList />} />
     </Routes>
     <Footer />
   </BrowserRouter>
