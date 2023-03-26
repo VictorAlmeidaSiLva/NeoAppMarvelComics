@@ -8,7 +8,7 @@ function Header() {
                     <Logo href="/" >
                         <img src={require("./images/marvelLogo.png")} alt="Logo"></img>
                     </Logo>
-                    <Cart href="/cart">
+                    <Cart href="/cartList">
                         <img src={require("./images/Cart.png")} alt="Cart"></img>
                     </Cart>
                 </nav>
