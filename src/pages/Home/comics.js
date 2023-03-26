@@ -26,10 +26,20 @@ function Comics() {
                 },
             });
 
-            setComics(response.data.data.results)
+            const comicsRare = response.data.data.results.map((comic) => {
+                const isRare = Math.random() < 0.1;
+                return {
+                    ...comic,
+                    marked: isRare
+                }
+            }); // "Função para colocar a tag Rare em 10% das comics consumidas da API"
+
+            setComics(comicsRare)
             setLoading(false)
+
+       
         }
-        loadComics()
+        loadComics() //"Essa função chama a API da Marvel para apresentar as informações da tela"
 
     }, [offset]);
 
@@ -43,7 +53,7 @@ function Comics() {
             setOffset(offset - 21);
             scroll.scrollToTop();
         }
-    }
+    } // "handleNextPage e handledPrevPage são funções para mudança de pagina Next para seguir adiante e Prev para voltar ambas vão de 21 em 21"
 
     if (loading === true) {
         return (
@@ -51,15 +61,20 @@ function Comics() {
                 <Spinner />
             </Container>
         )
-    }
+    } // "Um if para mostrar ao usuario que a API esta carregando e sinalizando para o usuario que o site não esta travado caso a API demore um pouco mais que o normal"
 
     return (
-        <Container>
+        <Container>  
             <h1>Comics Marvel</h1>
+            <NextPage>  
+                <nav>
+                    <buttton onClick={handlePrevPage} className="button-page" >Previous</buttton>
+                    <buttton onClick={handleNextPage} className="button-page" >Next</buttton>
+                </nav>
+            </NextPage>
             <ComicsList>
                 {comics.map((comic) => {
                     let priceComic = comic.prices[0]
-                    let creators = comic.creators.items.map(item => item.name).join(", ")
 
                     return (
                         <div>
@@ -68,17 +83,15 @@ function Comics() {
                                     <img src={comic.thumbnail.path + size + format} alt={comic.title}></img>
                                 </Link>
                                 <span>{comic.title}</span>
-                                {creators
-                                    ? <p>creator(s): {creators}</p>
-                                    : <p>Creator(s):</p>}
+                                {comic.marked ? <p className="text-rare">Rare</p> : <p>Normal</p>} 
 
                                 {priceComic.price === 0
                                     ? <h3 className="p-price">{unavailable}</h3>
-                                    : <h3 className="p-price">${priceComic.price}</h3>}
+                                    : <h3 className="p-price">${priceComic.price}</h3>}{/*Adaptando quando o custo dos produtos é 0*/}
 
                                 {priceComic.price === 0
                                     ? <button disabled="true">{unavailable}</button>
-                                    : <Link to={`/details/${comic.id}`}><button>Buy</button></Link>}{/* Botão é desabilitado se a Comic não tiver um valor definido na API  */}
+                                    : <Link to={`/details/${comic.id}?rare=${comic.marked}`}><button>Buy</button></Link>}{/* Botão é desabilitado se a Comic não tiver um valor definido na API  */}
                             </Comic>
                         </div>
                     )

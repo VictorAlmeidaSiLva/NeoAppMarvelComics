@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 
+
 export const Container = styled.div`
     min-height: 1000px;
     padding: 50px;
@@ -8,7 +9,6 @@ export const Container = styled.div`
         text-align: center;
         margin: 4rem 0;
     }
-
 `
 
 export const ComicsList = styled.ul`
@@ -65,6 +65,11 @@ export const Comic = styled.li`
         margin-top: 10px;
     }
 
+    .text-rare {
+        color: #ec1b23;
+        font-weight: bold;
+    }
+
     button {
         background-color: #fef200;
         color: black;
@@ -94,6 +99,7 @@ export const Comic = styled.li`
 `
 export const NextPage = styled.div`
         margin-top: 50px;
+        margin-bottom: 50px;
         
     nav {
         display: flex;
@@ -109,6 +115,7 @@ export const NextPage = styled.div`
         border-radius: 10px;
         padding: 10px 20px;
         cursor: pointer;
+        border: 2px solid black
 
     } 
 

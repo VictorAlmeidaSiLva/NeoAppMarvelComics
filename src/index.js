@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Footer from './components/footer';
 import Header from './components/header';
 import './global.css';
-import Cart from './pages/Cart/Cart';
+import Cart from './pages/Cart/cart';
 import Details from './pages/ComicPage/details'
 import Home from './pages/Home/home';
 
