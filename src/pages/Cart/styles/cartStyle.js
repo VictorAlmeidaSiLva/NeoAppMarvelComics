@@ -63,5 +63,11 @@ export const Amount = styled.div`
     h2 {
         font-weight: bold;
     }
+
+    input {
+        border-radius: 5%;
+        text-align: center;
+        font-weight: bold;
+    }
     
 `
